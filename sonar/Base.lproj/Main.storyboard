@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="sonar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sonar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,12 +16,61 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona una ciudad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWp-xF-p7t">
+                                <rect key="frame" x="0.0" y="40" width="600" height="15"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrG-Qm-ydZ">
+                                <rect key="frame" x="0.0" y="384" width="600" height="216"/>
+                                <animations/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" playsSound="YES"/>
+                                </accessibility>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="yat-dw-6VH"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ZBc-aO-MsQ"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yeh-Kf-xd6">
+                                <rect key="frame" x="231" y="87" width="139" height="144"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="120"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.2627450980392157" green="0.33333333333333331" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="MWp-xF-p7t" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="3ZP-Ke-gGR"/>
+                            <constraint firstItem="Yeh-Kf-xd6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Aw3-1B-FIX"/>
+                            <constraint firstItem="MWp-xF-p7t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cee-Y7-fRz"/>
+                            <constraint firstItem="wrG-Qm-ydZ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="EIs-4p-pVV"/>
+                            <constraint firstItem="wrG-Qm-ydZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GDo-ra-dNP"/>
+                            <constraint firstItem="MWp-xF-p7t" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="i3N-Bv-wFf"/>
+                            <constraint firstItem="Yeh-Kf-xd6" firstAttribute="top" secondItem="MWp-xF-p7t" secondAttribute="bottom" constant="32" id="oY3-pp-S2z"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wrG-Qm-ydZ" secondAttribute="bottom" id="vWw-oZ-9E5"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="11"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="currentCity" destination="MWp-xF-p7t" id="dnl-0W-kVo"/>
+                        <outlet property="currentTemperature" destination="Yeh-Kf-xd6" id="0ma-UD-OHD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="546" y="422"/>
         </scene>
     </scenes>
 </document>

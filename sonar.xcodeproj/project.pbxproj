@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5042B1211BF0648900AB28CC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5042B11F1BF0648900AB28CC /* Launch Screen.storyboard */; };
+		505FFA971BEC21D700ADB1CB /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505FFA961BEC21D700ADB1CB /* Hex.swift */; };
 		50AEDE241BE9B4F4006F66F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AEDE231BE9B4F4006F66F6 /* AppDelegate.swift */; };
 		50AEDE261BE9B4F4006F66F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AEDE251BE9B4F4006F66F6 /* ViewController.swift */; };
 		50AEDE291BE9B4F4006F66F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50AEDE271BE9B4F4006F66F6 /* Main.storyboard */; };
 		50AEDE2B1BE9B4F4006F66F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50AEDE2A1BE9B4F4006F66F6 /* Assets.xcassets */; };
-		50AEDE2E1BE9B4F4006F66F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50AEDE2C1BE9B4F4006F66F6 /* LaunchScreen.storyboard */; };
+		50D9A9EA1BEC073D00012336 /* ciudades.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50D9A9E91BEC073D00012336 /* ciudades.plist */; };
+		50D9A9EC1BEC074500012336 /* TemperaturaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D9A9EB1BEC074500012336 /* TemperaturaService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		50AEDE201BE9B4F4006F66F6 /* sonar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sonar.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		50AEDE231BE9B4F4006F66F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5042B1201BF0648900AB28CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
+		505FFA961BEC21D700ADB1CB /* Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hex.swift; sourceTree = "<group>"; };
+		50AEDE201BE9B4F4006F66F6 /* Sonar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sonar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50AEDE231BE9B4F4006F66F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		50AEDE251BE9B4F4006F66F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		50AEDE281BE9B4F4006F66F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50AEDE2A1BE9B4F4006F66F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		50AEDE2D1BE9B4F4006F66F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50AEDE2F1BE9B4F4006F66F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50D9A9E91BEC073D00012336 /* ciudades.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ciudades.plist; sourceTree = "<group>"; };
+		50D9A9EB1BEC074500012336 /* TemperaturaService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperaturaService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +52,7 @@
 		50AEDE211BE9B4F4006F66F6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				50AEDE201BE9B4F4006F66F6 /* sonar.app */,
+				50AEDE201BE9B4F4006F66F6 /* Sonar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,12 +60,15 @@
 		50AEDE221BE9B4F4006F66F6 /* sonar */ = {
 			isa = PBXGroup;
 			children = (
+				50D9A9E91BEC073D00012336 /* ciudades.plist */,
 				50AEDE231BE9B4F4006F66F6 /* AppDelegate.swift */,
 				50AEDE251BE9B4F4006F66F6 /* ViewController.swift */,
 				50AEDE271BE9B4F4006F66F6 /* Main.storyboard */,
 				50AEDE2A1BE9B4F4006F66F6 /* Assets.xcassets */,
-				50AEDE2C1BE9B4F4006F66F6 /* LaunchScreen.storyboard */,
 				50AEDE2F1BE9B4F4006F66F6 /* Info.plist */,
+				50D9A9EB1BEC074500012336 /* TemperaturaService.swift */,
+				505FFA961BEC21D700ADB1CB /* Hex.swift */,
+				5042B11F1BF0648900AB28CC /* Launch Screen.storyboard */,
 			);
 			path = sonar;
 			sourceTree = "<group>";
@@ -67,9 +76,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		50AEDE1F1BE9B4F4006F66F6 /* sonar */ = {
+		50AEDE1F1BE9B4F4006F66F6 /* Sonar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 50AEDE321BE9B4F4006F66F6 /* Build configuration list for PBXNativeTarget "sonar" */;
+			buildConfigurationList = 50AEDE321BE9B4F4006F66F6 /* Build configuration list for PBXNativeTarget "Sonar" */;
 			buildPhases = (
 				50AEDE1C1BE9B4F4006F66F6 /* Sources */,
 				50AEDE1D1BE9B4F4006F66F6 /* Frameworks */,
@@ -79,9 +88,9 @@
 			);
 			dependencies = (
 			);
-			name = sonar;
+			name = Sonar;
 			productName = sonar;
-			productReference = 50AEDE201BE9B4F4006F66F6 /* sonar.app */;
+			productReference = 50AEDE201BE9B4F4006F66F6 /* Sonar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -118,7 +127,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				50AEDE1F1BE9B4F4006F66F6 /* sonar */,
+				50AEDE1F1BE9B4F4006F66F6 /* Sonar */,
 			);
 		};
 /* End PBXProject section */
@@ -128,8 +137,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50AEDE2E1BE9B4F4006F66F6 /* LaunchScreen.storyboard in Resources */,
 				50AEDE2B1BE9B4F4006F66F6 /* Assets.xcassets in Resources */,
+				50D9A9EA1BEC073D00012336 /* ciudades.plist in Resources */,
+				5042B1211BF0648900AB28CC /* Launch Screen.storyboard in Resources */,
 				50AEDE291BE9B4F4006F66F6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,6 +152,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				50AEDE261BE9B4F4006F66F6 /* ViewController.swift in Sources */,
+				505FFA971BEC21D700ADB1CB /* Hex.swift in Sources */,
+				50D9A9EC1BEC074500012336 /* TemperaturaService.swift in Sources */,
 				50AEDE241BE9B4F4006F66F6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,20 +161,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		5042B11F1BF0648900AB28CC /* Launch Screen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5042B1201BF0648900AB28CC /* Base */,
+			);
+			name = "Launch Screen.storyboard";
+			sourceTree = "<group>";
+		};
 		50AEDE271BE9B4F4006F66F6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				50AEDE281BE9B4F4006F66F6 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		50AEDE2C1BE9B4F4006F66F6 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				50AEDE2D1BE9B4F4006F66F6 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -254,10 +266,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = sonar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.pixelbeat.sonar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -266,10 +280,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = sonar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.pixelbeat.sonar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -285,13 +301,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		50AEDE321BE9B4F4006F66F6 /* Build configuration list for PBXNativeTarget "sonar" */ = {
+		50AEDE321BE9B4F4006F66F6 /* Build configuration list for PBXNativeTarget "Sonar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				50AEDE331BE9B4F4006F66F6 /* Debug */,
 				50AEDE341BE9B4F4006F66F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

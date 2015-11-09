@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <array>
+        <string>Buenos Aires, Argentina</string>
+        <string>Sydney, Australia</string>
+        <string>Melbourne, Australia</string>
+        <string>Vienna, Austria</string>
+        <string>Baku, Azerbaijan</string>
+        <string>Manama, Bahrain</string>
+        <string>Brussels, Belgium</string>
+        <string>Rio de Janeiro, Brazil</string>
+        <string>Sao Paulo, Brazil</string>
+        <string>Sofia, Bulgaria</string>
+        <string>Burgas, Bulgaria</string>
+        <string>Siem Reap, Cambodia</string>
+        <string>Toronto, Canada</string>
+        <string>Vancouver, Canada</string>
+        <string>Shenzhen, China</string>
+        <string>Guangzhou, China</string>
+        <string>Shanghai, China</string>
+        <string>Beijing, China</string>
+        <string>Hangzhou, China</string>
+        <string>Zhuhai, China</string>
+        <string>Suzhou, China</string>
+        <string>Guilin, China</string>
+        <string>Nanjing, China</string>
+        <string>Prague, Czech Republic</string>
+        <string>Punta Cana, Dominican Republic</string>
+        <string>Cairo, Egypt</string>
+        <string>Sharm el-Sheikh, Egypt</string>
+        <string>Paris, France</string>
+        <string>Nice, France</string>
+        <string>Berlin, Germany</string>
+        <string>Munich, Germany</string>
+        <string>Frankfurt, Germany</string>
+        <string>Hong Kong, Hong Kong</string>
+        <string>Budapest, Hungary</string>
+        <string>Chennai, India</string>
+        <string>Mumbai, India</string>
+        <string>Delhi, India</string>
+        <string>Agra, India</string>
+        <string>Jaipur, India</string>
+        <string>Kolkata, India</string>
+        <string>Denpasar, Indonesia</string>
+        <string>Jakarta, Indonesia</string>
+        <string>Dublin, Ireland</string>
+        <string>Rome, Italy</string>
+        <string>Milan, Italy</string>
+        <string>Venice, Italy</string>
+        <string>Florence, Italy</string>
+        <string>Tokyo, Japan</string>
+        <string>Amman, Jordan</string>
+        <string>Nairobi, Kenya</string>
+        <string>Macau, Macau</string>
+        <string>Kuala Lumpur, Malaysia</string>
+        <string>Mexico City, Mexico</string>
+        <string>Cancun, Mexico</string>
+        <string>Marrakech, Morocco</string>
+        <string>Amsterdam, Netherlands</string>
+        <string>Auckland, New Zealand</string>
+        <string>Christchurch, New Zealand</string>
+        <string>Lima, Peru</string>
+        <string>Manila, Philippines</string>
+        <string>Warsaw, Poland</string>
+        <string>Lisbon, Portugal</string>
+        <string>Doha, Qatar</string>
+        <string>Bucharest, Romania</string>
+        <string>Moscow, Russia</string>
+        <string>St Petersburg, Russia</string>
+        <string>Mecca, Saudi Arabia</string>
+        <string>East Province, Saudi Arabia</string>
+        <string>Riyadh, Saudi Arabia</string>
+        <string>Singapore, Singapore</string>
+        <string>Johannesburg, South Africa</string>
+        <string>Seoul, South Korea</string>
+        <string>Barcelona, Spain</string>
+        <string>Madrid, Spain</string>
+        <string>Taipei City, Taiwan</string>
+        <string>Bangkok, Thailand</string>
+        <string>Phuket, Thailand</string>
+        <string>Pattaya, Thailand</string>
+        <string>Chiang Mai, Thailand</string>
+        <string>Djerba, Tunisia</string>
+        <string>Sousse, Tunisia</string>
+        <string>Antalya, Turkey</string>
+        <string>Istanbul, Turkey</string>
+        <string>Mugla, Turkey</string>
+        <string>Edirne, Turkey</string>
+        <string>Dubai, UAE</string>
+        <string>Abu Dhabi, UAE</string>
+        <string>London, UK</string>
+        <string>Kiev, Ukraine</string>
+        <string>New York City, USA</string>
+        <string>Las Vegas, USA</string>
+        <string>Miami, USA</string>
+        <string>Los Angeles, USA</string>
+        <string>Orlando, USA</string>
+        <string>San Francisco, USA</string>
+        <string>Honolulu, USA</string>
+        <string>Washington D.C., USA</string>
+        <string>Ho Chi Minh City, Vietnam</string>
+        <string>Hanoi, Vietnam</string>
+        <string>Harare, Zimbabwe</string>
+    </array>
+</plist>
