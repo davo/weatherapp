@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {    
     
-    @IBOutlet var currentTemperature: UILabel!
-    @IBOutlet var currentCity: UILabel!
+    @IBOutlet weak var currentTemperature: UILabel!
+    @IBOutlet weak var currentCity: UILabel!
     @IBOutlet var CitiesPickerView: UIPickerView!
     
     let gradient:CAGradientLayer? = CAGradientLayer()
@@ -21,9 +21,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*
+        Revisar como armar lista nueva usando los arrays
+        http://www.spritekitlessons.com/troubleshooting-arrays-in-a-property-list-with-swift/
+        */
+
+        
         let pathCitiesList = NSBundle.mainBundle().pathForResource("ciudades", ofType: "plist")
         
         ciudades = NSArray(contentsOfFile: pathCitiesList!) as! [String]
+        
+//        print(ciudades)
 
     }
     
@@ -47,8 +55,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let toColors: [AnyObject]
         
         switch temperatura {
-            case -10...0:
+            case -10...(-5):
                 toColors = [UIColor(rgba: "#cb34bd").CGColor, UIColor(rgba: "#4455d7").CGColor]
+            case -5...0:
+                toColors = [UIColor(rgba: "#f743ae").CGColor, UIColor(rgba: "#41f3b9").CGColor]
             case 0...5:
                 toColors = [UIColor(rgba: "#f743ae").CGColor, UIColor(rgba: "#41f3b9").CGColor]
             case 5...10:

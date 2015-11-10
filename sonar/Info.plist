@@ -51,5 +51,11 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Para entregar clima de tu ubicación</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Para entregar clima de tu ubicación</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Para entregar clima de tu ubicación</string>
 </dict>
 </plist>
