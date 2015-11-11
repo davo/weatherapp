@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -29,21 +30,34 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ZBc-aO-MsQ"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yeh-Kf-xd6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0.0" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yeh-Kf-xd6">
                                 <rect key="frame" x="231" y="147" width="139" height="144"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="160"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="32" y="0.0" width="211" height="191"/>
+                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona una ciudad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWp-xF-p7t">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona una ciudad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWp-xF-p7t">
                                 <rect key="frame" x="0.0" y="100" width="600" height="15"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="Etw-uk-a2h"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="328" width="400" height="15"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Etw-uk-a2h"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="Etw-uk-a2h"/>
+                                    </mask>
                                 </variation>
                             </label>
                         </subviews>
@@ -52,17 +66,14 @@
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="MWp-xF-p7t" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="3ZP-Ke-gGR"/>
-                            <constraint firstItem="Yeh-Kf-xd6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Aw3-1B-FIX"/>
-                            <constraint firstItem="MWp-xF-p7t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cee-Y7-fRz"/>
+                            <constraint firstItem="Yeh-Kf-xd6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="0vl-F9-U0U"/>
                             <constraint firstItem="wrG-Qm-ydZ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="DTp-zv-CAf"/>
                             <constraint firstItem="wrG-Qm-ydZ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="EIs-4p-pVV"/>
                             <constraint firstItem="wrG-Qm-ydZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GDo-ra-dNP"/>
+                            <constraint firstItem="MWp-xF-p7t" firstAttribute="top" secondItem="Yeh-Kf-xd6" secondAttribute="bottom" id="Kbm-UB-3X1"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wrG-Qm-ydZ" secondAttribute="bottom" constant="-1000" id="UvT-By-ipo"/>
-                            <constraint firstItem="MWp-xF-p7t" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="i3N-Bv-wFf"/>
-                            <constraint firstItem="Yeh-Kf-xd6" firstAttribute="top" secondItem="MWp-xF-p7t" secondAttribute="top" id="rwu-dA-ytl"/>
-                            <constraint firstItem="MWp-xF-p7t" firstAttribute="top" secondItem="Yeh-Kf-xd6" secondAttribute="top" constant="-20" id="sze-v1-xhx"/>
-                            <constraint firstItem="Yeh-Kf-xd6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vAs-ou-g3X"/>
+                            <constraint firstItem="Yeh-Kf-xd6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="d29-DX-ttx"/>
+                            <constraint firstItem="MWp-xF-p7t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="qLa-gl-u7a"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -71,19 +82,20 @@
                         </userDefinedRuntimeAttributes>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="sze-v1-xhx"/>
-                                <exclude reference="rwu-dA-ytl"/>
-                                <exclude reference="vAs-ou-g3X"/>
+                                <exclude reference="0vl-F9-U0U"/>
+                                <exclude reference="d29-DX-ttx"/>
+                                <exclude reference="Kbm-UB-3X1"/>
+                                <exclude reference="qLa-gl-u7a"/>
                                 <exclude reference="UvT-By-ipo"/>
                                 <exclude reference="DTp-zv-CAf"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <exclude reference="i3N-Bv-wFf"/>
-                                <include reference="sze-v1-xhx"/>
-                                <exclude reference="rwu-dA-ytl"/>
-                                <include reference="vAs-ou-g3X"/>
+                                <include reference="0vl-F9-U0U"/>
+                                <include reference="d29-DX-ttx"/>
+                                <include reference="Kbm-UB-3X1"/>
+                                <include reference="qLa-gl-u7a"/>
                                 <include reference="UvT-By-ipo"/>
                                 <include reference="DTp-zv-CAf"/>
                             </mask>

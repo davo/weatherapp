@@ -133,6 +133,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let myTitle = NSAttributedString(string: nombreCompuesto, attributes: [NSForegroundColorAttributeName:UIColor.whiteColor()])
         pickerLabel!.attributedText = myTitle
         pickerLabel!.textAlignment = .Center
+        pickerLabel!.font = UIFont(name: pickerLabel!.font.fontName, size: 22)
         
         return pickerLabel
         
