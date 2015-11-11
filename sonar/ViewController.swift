@@ -8,7 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {    
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    
+    @IBOutlet weak var pickerViewPosition: NSLayoutConstraint!
     
     @IBOutlet weak var currentTemperature: UILabel!
     @IBOutlet weak var currentCity: UILabel!
@@ -141,6 +144,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let nombreCiudad = miCiudad["City"] as! String
         let nombrePais = miCiudad["Country"] as! String
         let nombreCompuesto = nombreCiudad + ", " + nombrePais
+        
+        UIView.animateWithDuration(1, delay: 0.5, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            self.currentTemperature.alpha = 1
+            self.currentCity.alpha = 1
+            self.pickerViewPosition.constant = -self.view.frame.height
+            self.view.layoutIfNeeded()
+            
+            }, completion: nil)
 
         
         
@@ -152,7 +163,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             let tempRounded = Int(round(temperatura))
             // Print the result in the label and attach the degree symbol
             self.currentTemperature.text = "\(tempRounded)°"
-            self.currentCity.text = nombreCiudad
+            self.currentCity.text = nombreCompuesto
             // Animate gradient background
             self.animateLayer(tempRounded)
             NSUserDefaults.standardUserDefaults().setValue(miCiudad, forKey: "ultimaCiudadBuscada")
@@ -161,6 +172,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
     }
 
+    @IBAction func SwipeUp(sender: UISwipeGestureRecognizer) {
+        UIView.animateWithDuration(1, delay: 0.0, usingSpringWithDamping: 0.95, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            self.currentTemperature.alpha = 0
+            self.currentCity.alpha = 0
+            self.pickerViewPosition.constant = 0
+            self.view.layoutIfNeeded()
+            
+            
+            
+        }, completion: nil)
+    }
 
 }
 
