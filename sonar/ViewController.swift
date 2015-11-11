@@ -144,10 +144,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let miCiudad = ciudades[row]
         
         
+        // Tenias guardados los valores como String primero los tenes que convertir a Double!
+        let latitud = Float64(miCiudad["Latitude"] as! String)
         
-        let latitud = miCiudad["Latitude"] as! Double
-        
-        print(latitud)
+        print("latitud: \(latitud)")
         
         /*
   
