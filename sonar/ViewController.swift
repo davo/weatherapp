@@ -143,32 +143,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let miCiudad = ciudades[row]
         
-        
-        // Tenias guardados los valores como String primero los tenes que convertir a Double!
+    
         let latitud = Float64(miCiudad["Latitude"] as! String)
         
-        print("latitud: \(latitud)")
         
-        /*
-  
-        let longitud = miCiudad["Longitude"] as! Double
-        
-        
-        
-        print(longitud)
-
-        */
-        
-        
-        coordenadaSeleccionada = CLLocationCoordinate2D(latitude: -34.6184209, longitude: -58.4367844)
-        
-        
-        
-        //coordenadaSeleccionada = CLLocationCoordinate2D(latitude: latitud, longitude: longitud)
+        let longitud = Float64(miCiudad["Longitude"] as! String)
         
 
         
-        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        coordenadaSeleccionada = CLLocationCoordinate2D(latitude: latitud!, longitude: longitud!)
+        
+
+        
+        let span = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
         
         let region = MKCoordinateRegion(center: coordenadaSeleccionada, span: span)
         
