@@ -38,6 +38,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         super.viewDidAppear(animated)
         
+
+
+        
         let gradientLayerView: UIView = UIView(frame: CGRectMake(0, 0, view.bounds.width, view.bounds.height))
         
         self.gradient?.frame = self.view.bounds
