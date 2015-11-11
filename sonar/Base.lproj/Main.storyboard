@@ -18,29 +18,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona una ciudad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWp-xF-p7t">
-                                <rect key="frame" x="0.0" y="40" width="600" height="15"/>
+                                <rect key="frame" x="0.0" y="100" width="600" height="15"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrG-Qm-ydZ">
-                                <rect key="frame" x="0.0" y="384" width="600" height="216"/>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wrG-Qm-ydZ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="216"/>
                                 <animations/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" playsSound="YES"/>
                                 </accessibility>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="584" width="400" height="216"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="yat-dw-6VH"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ZBc-aO-MsQ"/>
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yeh-Kf-xd6">
-                                <rect key="frame" x="231" y="87" width="139" height="144"/>
+                                <rect key="frame" x="231" y="147" width="139" height="144"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="120"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -57,8 +54,11 @@
                             <constraint firstItem="MWp-xF-p7t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cee-Y7-fRz"/>
                             <constraint firstItem="wrG-Qm-ydZ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="EIs-4p-pVV"/>
                             <constraint firstItem="wrG-Qm-ydZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GDo-ra-dNP"/>
-                            <constraint firstItem="MWp-xF-p7t" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="i3N-Bv-wFf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wrG-Qm-ydZ" secondAttribute="bottom" id="UvT-By-ipo"/>
+                            <constraint firstItem="MWp-xF-p7t" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="i3N-Bv-wFf"/>
+                            <constraint firstItem="Yeh-Kf-xd6" firstAttribute="top" secondItem="MWp-xF-p7t" secondAttribute="top" constant="40" id="nA1-Pz-8Qi"/>
                             <constraint firstItem="Yeh-Kf-xd6" firstAttribute="top" secondItem="MWp-xF-p7t" secondAttribute="bottom" constant="32" id="oY3-pp-S2z"/>
+                            <constraint firstItem="Yeh-Kf-xd6" firstAttribute="top" secondItem="MWp-xF-p7t" secondAttribute="top" id="rwu-dA-ytl"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -67,12 +67,19 @@
                         </userDefinedRuntimeAttributes>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="nA1-Pz-8Qi"/>
+                                <exclude reference="rwu-dA-ytl"/>
                                 <exclude reference="4vd-Ii-hDW"/>
+                                <exclude reference="UvT-By-ipo"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <include reference="4vd-Ii-hDW"/>
+                                <exclude reference="nA1-Pz-8Qi"/>
+                                <exclude reference="oY3-pp-S2z"/>
+                                <include reference="rwu-dA-ytl"/>
+                                <exclude reference="4vd-Ii-hDW"/>
+                                <include reference="UvT-By-ipo"/>
                             </mask>
                         </variation>
                     </view>

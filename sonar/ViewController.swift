@@ -55,23 +55,31 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let toColors: [AnyObject]
         
         switch temperatura {
-            case -10...(-5):
-                toColors = [UIColor(rgba: "#cb34bd").CGColor, UIColor(rgba: "#4455d7").CGColor]
-            case -5...0:
-                toColors = [UIColor(rgba: "#f743ae").CGColor, UIColor(rgba: "#41f3b9").CGColor]
-            case 0...5:
-                toColors = [UIColor(rgba: "#f743ae").CGColor, UIColor(rgba: "#41f3b9").CGColor]
-            case 5...10:
-                toColors = [UIColor(rgba: "#0faed6").CGColor, UIColor(rgba: "#9238fa").CGColor]
-            case 10...15:
-                toColors = [UIColor(rgba: "#fb8303").CGColor, UIColor(rgba: "#0fefcd").CGColor]
-            case 15...20:
-                toColors = [UIColor(rgba: "#fbd103").CGColor, UIColor(rgba: "#fb8303").CGColor]
-            case 20...25:
-                toColors = [UIColor(rgba: "#fbd103").CGColor, UIColor(rgba: "#fb8303").CGColor]
+            
+        case -10...(-5):
+            toColors = [UIColor(rgba: "#4CC7A1").CGColor, UIColor(rgba: "#38918B").CGColor]
+        case -5...0:
+            toColors = [UIColor(rgba: "#245B76").CGColor, UIColor(rgba: "#102260").CGColor]
+        case 0...5:
+            toColors = [UIColor(rgba: "#732766").CGColor, UIColor(rgba: "#422463").CGColor]
+        case 5...10:
+            toColors = [UIColor(rgba: "#D82B6C").CGColor, UIColor(rgba: "#9238fa").CGColor]
+        case 10...15:
+            toColors = [UIColor(rgba: "#ED8B67").CGColor, UIColor(rgba: "#0fefcd").CGColor]
+        case 15...20:
+            toColors = [UIColor(rgba: "#FFF161").CGColor, UIColor(rgba: "#fb8303").CGColor]
+        case 20...25:
+            toColors = [UIColor(rgba: "#fbd103").CGColor, UIColor(rgba: "#fb8303").CGColor]
+        case 25...30:
+            toColors = [UIColor(rgba: "#fbd103").CGColor, UIColor(rgba: "#fb8303").CGColor]
+        case 30...35:
+            toColors = [UIColor(rgba: "#fbd103").CGColor, UIColor(rgba: "#fb8303").CGColor]
+        case 35...40:
+            toColors = [UIColor(rgba: "#FFF161").CGColor, UIColor(rgba: "#FDE961").CGColor]
+            
+        default:
+            toColors = [UIColor(rgba: "#1804D2").CGColor, UIColor(rgba: "#0091FF").CGColor]
 
-            default:
-                toColors = [UIColor(rgba: "#1804D2").CGColor, UIColor(rgba: "#0091FF").CGColor]
         }
 
         let fromColors = self.gradient?.colors
