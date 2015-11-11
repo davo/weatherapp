@@ -31,6 +31,9 @@
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" playsSound="YES"/>
                                 </accessibility>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="584" width="400" height="216"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="yat-dw-6VH"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ZBc-aO-MsQ"/>
@@ -49,19 +52,29 @@
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="MWp-xF-p7t" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="3ZP-Ke-gGR"/>
+                            <constraint firstItem="wrG-Qm-ydZ" firstAttribute="bottom" secondItem="MWp-xF-p7t" secondAttribute="bottom" id="4vd-Ii-hDW"/>
                             <constraint firstItem="Yeh-Kf-xd6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Aw3-1B-FIX"/>
                             <constraint firstItem="MWp-xF-p7t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cee-Y7-fRz"/>
                             <constraint firstItem="wrG-Qm-ydZ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="EIs-4p-pVV"/>
                             <constraint firstItem="wrG-Qm-ydZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GDo-ra-dNP"/>
                             <constraint firstItem="MWp-xF-p7t" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="i3N-Bv-wFf"/>
                             <constraint firstItem="Yeh-Kf-xd6" firstAttribute="top" secondItem="MWp-xF-p7t" secondAttribute="bottom" constant="32" id="oY3-pp-S2z"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wrG-Qm-ydZ" secondAttribute="bottom" id="vWw-oZ-9E5"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="11"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4vd-Ii-hDW"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="4vd-Ii-hDW"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="currentCity" destination="MWp-xF-p7t" id="dnl-0W-kVo"/>
