@@ -10,6 +10,8 @@
 		5042B1211BF0648900AB28CC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5042B11F1BF0648900AB28CC /* Launch Screen.storyboard */; };
 		5042B1231BF12A5900AB28CC /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5042B1221BF12A5900AB28CC /* cities.plist */; };
 		505FFA971BEC21D700ADB1CB /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505FFA961BEC21D700ADB1CB /* Hex.swift */; };
+		50613C2E1BF2E269003C84EC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50613C2D1BF2E269003C84EC /* CoreLocation.framework */; };
+		50613C2F1BF2E26F003C84EC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50613C2B1BF2E1F3003C84EC /* MapKit.framework */; };
 		50AEDE241BE9B4F4006F66F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AEDE231BE9B4F4006F66F6 /* AppDelegate.swift */; };
 		50AEDE261BE9B4F4006F66F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AEDE251BE9B4F4006F66F6 /* ViewController.swift */; };
 		50AEDE291BE9B4F4006F66F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50AEDE271BE9B4F4006F66F6 /* Main.storyboard */; };
@@ -23,6 +25,7 @@
 		5042B1221BF12A5900AB28CC /* cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cities.plist; sourceTree = "<group>"; };
 		505FFA961BEC21D700ADB1CB /* Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hex.swift; sourceTree = "<group>"; };
 		50613C2B1BF2E1F3003C84EC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		50613C2D1BF2E269003C84EC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		50AEDE201BE9B4F4006F66F6 /* Sonar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sonar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AEDE231BE9B4F4006F66F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		50AEDE251BE9B4F4006F66F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50613C2E1BF2E269003C84EC /* CoreLocation.framework in Frameworks */,
+				50613C2F1BF2E26F003C84EC /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +52,7 @@
 		50AEDE171BE9B4F4006F66F6 = {
 			isa = PBXGroup;
 			children = (
+				50613C2D1BF2E269003C84EC /* CoreLocation.framework */,
 				50613C2B1BF2E1F3003C84EC /* MapKit.framework */,
 				50AEDE221BE9B4F4006F66F6 /* sonar */,
 				50AEDE211BE9B4F4006F66F6 /* Products */,

@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    
+    @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var pickerViewPosition: NSLayoutConstraint!
     
     @IBOutlet weak var currentTemperature: UILabel!
     @IBOutlet weak var currentCity: UILabel!
     @IBOutlet var CitiesPickerView: UIPickerView!
+    
+    var coordenadaSeleccionada: CLLocationCoordinate2D!
     
     let gradient:CAGradientLayer? = CAGradientLayer()
     
@@ -24,24 +28,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*
-        Revisar como armar lista nueva usando los arrays
-        http://www.spritekitlessons.com/troubleshooting-arrays-in-a-property-list-with-swift/
-        */
-        
-//        let citiesLatLong =
-        
         let pathCitiesList = NSBundle.mainBundle().pathForResource("cities", ofType: "plist")
         
         ciudades = NSArray(contentsOfFile: pathCitiesList!) as! [NSDictionary]
-        
-        
-        
-//        print(ciudades)
 
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+        super.viewDidAppear(animated)
         
         let gradientLayerView: UIView = UIView(frame: CGRectMake(0, 0, view.bounds.width, view.bounds.height))
         
@@ -54,6 +49,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         gradientLayerView.layer.masksToBounds = true
         
         self.view.layer.insertSublayer(gradientLayerView.layer, atIndex: 0)
+        
+        
+        
         
     }
 
@@ -142,6 +140,39 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let miCiudad = ciudades[row]
         
+        
+        
+        let latitud = miCiudad["Latitude"] as! Double
+        
+        print(latitud)
+        
+        /*
+  
+        let longitud = miCiudad["Longitude"] as! Double
+        
+        
+        
+        print(longitud)
+
+        */
+        
+        
+        coordenadaSeleccionada = CLLocationCoordinate2D(latitude: -34.6184209, longitude: -58.4367844)
+        
+        
+        
+        //coordenadaSeleccionada = CLLocationCoordinate2D(latitude: latitud, longitude: longitud)
+        
+
+        
+        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        
+        let region = MKCoordinateRegion(center: coordenadaSeleccionada, span: span)
+        
+        map.setRegion(region, animated: true)
+
+
+        
         let nombreCiudad = miCiudad["City"] as! String
         let nombrePais = miCiudad["Country"] as! String
         let nombreCompuesto = nombreCiudad + ", " + nombrePais
@@ -149,6 +180,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         UIView.animateWithDuration(1, delay: 0.5, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
             self.currentTemperature.alpha = 1
             self.currentCity.alpha = 1
+            self.map.alpha = 1
             self.pickerViewPosition.constant = -self.view.frame.height
             self.view.layoutIfNeeded()
             
@@ -177,6 +209,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         UIView.animateWithDuration(1, delay: 0.0, usingSpringWithDamping: 0.95, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
             self.currentTemperature.alpha = 0
             self.currentCity.alpha = 0
+            self.map.alpha = 0
             self.pickerViewPosition.constant = 0
             self.view.layoutIfNeeded()
             

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -36,11 +37,8 @@
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="160"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="32" y="0.0" width="211" height="191"/>
-                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona una ciudad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWp-xF-p7t">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Selecciona una ciudad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWp-xF-p7t">
                                 <rect key="frame" x="0.0" y="100" width="600" height="15"/>
                                 <animations/>
                                 <constraints>
@@ -60,6 +58,26 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <mapView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2M1-R1-ran">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="J3W-g8-sdH"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="J3W-g8-sdH"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="J3W-g8-sdH"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Cg2-3i-MuJ"/>
+                                </connections>
+                            </mapView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.2627450980392157" green="0.33333333333333331" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
@@ -67,13 +85,18 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Yeh-Kf-xd6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="0vl-F9-U0U"/>
+                            <constraint firstItem="2M1-R1-ran" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2" id="Bg9-VV-y9f"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2M1-R1-ran" secondAttribute="bottom" id="CBj-FF-etb"/>
+                            <constraint firstItem="2M1-R1-ran" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CSf-fg-6QK"/>
                             <constraint firstItem="wrG-Qm-ydZ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="DTp-zv-CAf"/>
                             <constraint firstItem="wrG-Qm-ydZ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="EIs-4p-pVV"/>
                             <constraint firstItem="wrG-Qm-ydZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GDo-ra-dNP"/>
                             <constraint firstItem="MWp-xF-p7t" firstAttribute="top" secondItem="Yeh-Kf-xd6" secondAttribute="bottom" id="Kbm-UB-3X1"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wrG-Qm-ydZ" secondAttribute="bottom" constant="-1000" id="UvT-By-ipo"/>
+                            <constraint firstItem="2M1-R1-ran" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="aMg-N5-vCD"/>
                             <constraint firstItem="Yeh-Kf-xd6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="d29-DX-ttx"/>
                             <constraint firstItem="MWp-xF-p7t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="qLa-gl-u7a"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2M1-R1-ran" secondAttribute="bottom" id="xqd-Ta-NcU"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -81,22 +104,38 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="2M1-R1-ran"/>
+                            </mask>
                             <mask key="constraints">
                                 <exclude reference="0vl-F9-U0U"/>
                                 <exclude reference="d29-DX-ttx"/>
                                 <exclude reference="Kbm-UB-3X1"/>
                                 <exclude reference="qLa-gl-u7a"/>
+                                <exclude reference="Bg9-VV-y9f"/>
+                                <exclude reference="CSf-fg-6QK"/>
+                                <exclude reference="aMg-N5-vCD"/>
+                                <exclude reference="CBj-FF-etb"/>
                                 <exclude reference="UvT-By-ipo"/>
+                                <exclude reference="xqd-Ta-NcU"/>
                                 <exclude reference="DTp-zv-CAf"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="2M1-R1-ran"/>
+                            </mask>
                             <mask key="constraints">
                                 <include reference="0vl-F9-U0U"/>
                                 <include reference="d29-DX-ttx"/>
                                 <include reference="Kbm-UB-3X1"/>
                                 <include reference="qLa-gl-u7a"/>
+                                <include reference="Bg9-VV-y9f"/>
+                                <include reference="CSf-fg-6QK"/>
+                                <include reference="aMg-N5-vCD"/>
+                                <exclude reference="CBj-FF-etb"/>
                                 <include reference="UvT-By-ipo"/>
+                                <include reference="xqd-Ta-NcU"/>
                                 <include reference="DTp-zv-CAf"/>
                             </mask>
                         </variation>
@@ -107,6 +146,7 @@
                     <connections>
                         <outlet property="currentCity" destination="MWp-xF-p7t" id="dnl-0W-kVo"/>
                         <outlet property="currentTemperature" destination="Yeh-Kf-xd6" id="0ma-UD-OHD"/>
+                        <outlet property="map" destination="2M1-R1-ran" id="iZL-5p-kTJ"/>
                         <outlet property="pickerViewPosition" destination="UvT-By-ipo" id="ITV-Ky-zxp"/>
                     </connections>
                 </viewController>
