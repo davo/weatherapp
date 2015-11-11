@@ -16,7 +16,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     let gradient:CAGradientLayer? = CAGradientLayer()
     
-    var ciudades = [String]()
+    var ciudades = [NSDictionary]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +25,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         Revisar como armar lista nueva usando los arrays
         http://www.spritekitlessons.com/troubleshooting-arrays-in-a-property-list-with-swift/
         */
-
         
-        let pathCitiesList = NSBundle.mainBundle().pathForResource("ciudades", ofType: "plist")
+//        let citiesLatLong =
         
-        ciudades = NSArray(contentsOfFile: pathCitiesList!) as! [String]
+        let pathCitiesList = NSBundle.mainBundle().pathForResource("cities", ofType: "plist")
+        
+        ciudades = NSArray(contentsOfFile: pathCitiesList!) as! [NSDictionary]
+        
+        
         
 //        print(ciudades)
 
@@ -44,8 +47,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         gradientLayerView.layer.insertSublayer(gradient!, atIndex: 0)
         
-        gradientLayerView.layer.cornerRadius = 10;
-        gradientLayerView.layer.masksToBounds = true;
+        gradientLayerView.layer.cornerRadius = 10
+        gradientLayerView.layer.masksToBounds = true
         
         self.view.layer.insertSublayer(gradientLayerView.layer, atIndex: 0)
         
@@ -121,7 +124,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             pickerLabel = UILabel()
         }
         let titleData = ciudades[row]
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSForegroundColorAttributeName:UIColor.whiteColor()])
+        let nombreCiudad = titleData["City"] as! String
+        let nombrePais = titleData["Country"] as! String
+        let nombreCompuesto = nombreCiudad + ", " + nombrePais
+        let myTitle = NSAttributedString(string: nombreCompuesto, attributes: [NSForegroundColorAttributeName:UIColor.whiteColor()])
         pickerLabel!.attributedText = myTitle
         pickerLabel!.textAlignment = .Center
         
@@ -132,16 +138,21 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let miCiudad = ciudades[row]
         
+        let nombreCiudad = miCiudad["City"] as! String
+        let nombrePais = miCiudad["Country"] as! String
+        let nombreCompuesto = nombreCiudad + ", " + nombrePais
+
+        
         
         let termometro = TermometroService()
-        let urlString = "http://api.openweathermap.org/data/2.5/weather?q=\(miCiudad)&units=metric&appid=9c22249239b970130f70a73fb3c189c4"
+        let urlString = "http://api.openweathermap.org/data/2.5/weather?q=\(nombreCompuesto)&units=metric&appid=9c22249239b970130f70a73fb3c189c4"
         
-        termometro.obtenerTemperaturaSegunCiudad(urlString, nombre: miCiudad, callback: { temperatura in
+        termometro.obtenerTemperaturaSegunCiudad(urlString, nombre: nombreCiudad, callback: { temperatura in
             // Round temperature by casting the rounded number as an Int
             let tempRounded = Int(round(temperatura))
             // Print the result in the label and attach the degree symbol
             self.currentTemperature.text = "\(tempRounded)°"
-            self.currentCity.text = miCiudad
+            self.currentCity.text = nombreCiudad
             // Animate gradient background
             self.animateLayer(tempRounded)
             NSUserDefaults.standardUserDefaults().setValue(miCiudad, forKey: "ultimaCiudadBuscada")
